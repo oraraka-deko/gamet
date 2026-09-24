@@ -2,6 +2,13 @@ package goastroids
 
 import "github.com/hajimehoshi/ebiten/v2"
 
+const (
+	ScreenWidth  = 800
+	ScreenHeight = 600
+	WorldWidth   = 2000
+	WorldHeight  = 600
+)
+
 type Game struct {
 	sceneManager *SceneManager
 	input        Input
@@ -14,8 +21,7 @@ func (i *Input) Update() {}
 func (g *Game) Update() error {
 	if g.sceneManager == nil {
 		g.sceneManager = &SceneManager{}
-		meteor := make(map[int]*Meteor)
-				g.sceneManager.GoToScene(&TitleScene{meteor: meteor})
+		g.sceneManager.GoToScene(NewTitleScene())
 	}
 	g.input.Update()
 	if err := g.sceneManager.Update(&g.input); err != nil {

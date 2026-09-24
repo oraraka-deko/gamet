@@ -19,6 +19,19 @@ var TitleFont = mustLoadFont("fonts/title.ttf")
 var MeteoresSprites = mustLoadImages("images/meteors/*.png")
 
 var MeteoresSpritesSmall = mustLoadImages("images/meteors-small/*.png")
+
+var ArcherIdle = mustLoadImages("archer/1/Elf_01__IDLE_*.png")
+var ArcherAttack = mustLoadImages("archer/1/Elf_01__ATTACK_*.png")
+var ArcherHurt = mustLoadImages("archer/1/Elf_01__HURT_*.png")
+var ArcherDie = mustLoadImages("archer/1/Elf_01__DIE_*.png")
+
+var Archer2Idle = mustLoadImages("archer/2/Elf_02__IDLE_*.png")
+var Archer2Attack = mustLoadImages("archer/2/Elf_02__ATTACK_*.png")
+var Archer2Hurt = mustLoadImages("archer/2/Elf_02__HURT_*.png")
+var Archer2Die = mustLoadImages("archer/2/Elf_02__DIE_*.png")
+
+var ArrowSprite = mustLoadImage("arrows/without_shadow/1.png")
+var ExplosionSprite = mustLoadImage("images/explosion.png")
 //var FaceFont = FaceNewFont("fonts/title.ttf")
 // func FaceNewFont(name string) font.Face {
 // 	buf, err := assets.ReadFile(name)
