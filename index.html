@@ -1,27 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Ebiten Web Game</title>
-    <script src="wasm_exec.js"></script>
-    <script>
-      const go = new Go();
-      WebAssembly.instantiateStreaming(fetch("game.wasm"), go.importObject).then(
-        (result) => {
-          go.run(result.instance);
-        }
-      );
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Archer Duel (Node.js Port)</title>
     <style>
+      @font-face {
+        font-family: "TitleFont";
+        src: url("/assets/fonts/title.ttf") format("truetype");
+        font-display: swap;
+      }
+      * {
+        box-sizing: border-box;
+      }
       body {
         margin: 0;
-        background: #000;
+        background: #0b0f19;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
+        overflow: hidden;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      canvas {
+        display: block;
+        width: min(100vw, calc(100vh * (800 / 600)));
+        height: min(100vh, calc(100vw * (600 / 800)));
+        max-width: 800px;
+        max-height: 600px;
+        border: 1px solid #283655;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+        touch-action: none;
+        cursor: crosshair;
       }
     </style>
   </head>
-  <body></body>
+  <body>
+    <canvas id="game-canvas" width="800" height="600"></canvas>
+    <script type="module">
+      import { runGame } from "./src/game.js";
+      const canvas = document.getElementById("game-canvas");
+      runGame(canvas);
+    </script>
+  </body>
 </html>

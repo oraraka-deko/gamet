@@ -1,0 +1,16 @@
+{
+  "name": "gamet-node",
+  "version": "1.0.0",
+  "description": "Node.js port of Archer Duel (from Go / Ebiten)",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test test/game.test.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+
